@@ -1,0 +1,8 @@
+_tooling/
+node_modules/
+screenshots/
+报告/
+_report_*.txt
+*.docx
+.DS_Store
+Thumbs.db
