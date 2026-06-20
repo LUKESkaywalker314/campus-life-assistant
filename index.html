@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>校园生活助手</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="logo">校</span>
+        <span>校园生活助手</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="schedule.html">我的课表</a></li>
+          <li><a href="market.html">二手集市</a></li>
+          <li><a href="lost.html">失物招领</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换主题">☾</button>
+        <button class="nav-toggle" type="button" aria-label="展开菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <section class="hero">
+        <div class="carousel" id="newsCarousel"></div>
+        <div class="card">
+          <div class="card-body">
+            <div class="section-head" style="margin-bottom:10px">
+              <span class="section-title" style="font-size:1.1rem">校园快讯</span>
+            </div>
+            <ul class="news-list" id="newsList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="module-grid" id="statStrip"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <span class="section-title">常用服务</span>
+        </div>
+        <div class="module-grid">
+          <a class="card hoverable module-card" href="schedule.html">
+            <span class="module-icon">📅</span>
+            <span class="card-title">我的课表</span>
+            <span class="card-text">管理每周课程，自动检测时间冲突</span>
+          </a>
+          <a class="card hoverable module-card" href="market.html">
+            <span class="module-icon">🛒</span>
+            <span class="card-title">二手集市</span>
+            <span class="card-text">发布与淘换校园闲置，校内当面交易</span>
+          </a>
+          <a class="card hoverable module-card" href="lost.html">
+            <span class="module-icon">🔎</span>
+            <span class="card-title">失物招领</span>
+            <span class="card-text">发布寻物与招领，帮丢失物品找到主人</span>
+          </a>
+          <a class="card hoverable module-card" href="#newsList">
+            <span class="module-icon">📰</span>
+            <span class="card-title">校园资讯</span>
+            <span class="card-text">通知公告、活动预告一站获取</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      校园生活助手 · 25 计算机 1 班第 2 组实训项目 · <span data-year>2026</span>
+    </div>
+  </footer>
+
+  <script src="js/dataManager.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
