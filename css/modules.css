@@ -1,0 +1,131 @@
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.timetable-wrap {
+  overflow-x: auto;
+}
+
+.timetable {
+  display: grid;
+  grid-template-columns: 72px repeat(7, minmax(96px, 1fr));
+  grid-auto-rows: 60px;
+  gap: 6px;
+  min-width: 760px;
+}
+
+.tt-cell {
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  color: var(--color-text-soft);
+  background: var(--color-surface-2);
+}
+
+.tt-head {
+  font-weight: 700;
+  color: var(--color-text);
+  background: transparent;
+}
+
+.tt-time {
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.2;
+  background: transparent;
+  color: var(--color-text-faint);
+  font-size: 0.78rem;
+}
+
+.tt-time strong {
+  display: block;
+  color: var(--color-text-soft);
+  font-size: 0.86rem;
+}
+
+.tt-course {
+  align-self: stretch;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.tt-course:hover {
+  transform: scale(1.02);
+}
+
+.tt-course b {
+  font-size: 0.86rem;
+}
+
+.tt-course span {
+  font-size: 0.74rem;
+  opacity: 0.92;
+}
+
+.tt-course.conflict {
+  outline: 2px solid var(--color-danger);
+  outline-offset: -2px;
+}
+
+.c1 { background: #2f6fed; }
+.c2 { background: #1aa860; }
+.c3 { background: #e8920a; }
+.c4 { background: #8a4cf0; }
+.c5 { background: #e5484d; }
+.c6 { background: #0ea5b5; }
+.c7 { background: #d6477f; }
+
+.list-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+
+.list-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.result-count {
+  margin: 0 0 14px;
+  color: var(--color-text-faint);
+  font-size: 0.88rem;
+}
+
+.lost-card .lost-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-tip {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 0.86rem;
+}

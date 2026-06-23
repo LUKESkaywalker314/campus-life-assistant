@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的课表 · 校园生活助手</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/modules.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="logo">校</span>
+        <span>校园生活助手</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="schedule.html">我的课表</a></li>
+          <li><a href="market.html">二手集市</a></li>
+          <li><a href="lost.html">失物招领</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换主题">☾</button>
+        <button class="nav-toggle" type="button" aria-label="展开菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-title">我的课表</span>
+      </div>
+
+      <div class="split">
+        <form class="panel" id="courseForm" novalidate>
+          <div class="panel-title">添加课程</div>
+          <div class="form-row">
+            <label>课程名称<span class="req">*</span></label>
+            <input class="input" name="name" maxlength="20" placeholder="如 Web 前端进阶" />
+            <div class="field-error" data-err="name"></div>
+          </div>
+          <div class="form-row">
+            <label>上课星期<span class="req">*</span></label>
+            <select class="select" name="day">
+              <option value="">请选择</option>
+              <option value="1">周一</option>
+              <option value="2">周二</option>
+              <option value="3">周三</option>
+              <option value="4">周四</option>
+              <option value="5">周五</option>
+              <option value="6">周六</option>
+              <option value="7">周日</option>
+            </select>
+            <div class="field-error" data-err="day"></div>
+          </div>
+          <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label>起始节次<span class="req">*</span></label>
+              <select class="select" name="start" id="startSel"></select>
+            </div>
+            <div>
+              <label>结束节次<span class="req">*</span></label>
+              <select class="select" name="end" id="endSel"></select>
+            </div>
+          </div>
+          <div class="field-error" data-err="section"></div>
+          <div class="form-row">
+            <label>任课教师</label>
+            <input class="input" name="teacher" maxlength="15" placeholder="选填" />
+          </div>
+          <div class="form-row">
+            <label>上课地点</label>
+            <input class="input" name="location" maxlength="20" placeholder="选填" />
+          </div>
+          <div class="form-row">
+            <label>上课周次</label>
+            <input class="input" name="weeks" maxlength="15" placeholder="如 1-16周" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">添加到课表</button>
+        </form>
+
+        <div>
+          <div class="section-tip">点击课程方块可删除该课程；添加时如与已有课程时间重叠会自动拦截。</div>
+          <div class="panel">
+            <div class="timetable-wrap">
+              <div class="timetable" id="timetable"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      校园生活助手 · 25 计算机 1 班第 2 组实训项目 · <span data-year>2026</span>
+    </div>
+  </footer>
+
+  <script src="js/dataManager.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/schedule.js"></script>
+</body>
+</html>
