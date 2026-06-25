@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>失物招领 · 校园生活助手</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/modules.css" />
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="logo">校</span>
+        <span>校园生活助手</span>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="schedule.html">我的课表</a></li>
+          <li><a href="market.html">二手集市</a></li>
+          <li><a href="lost.html">失物招领</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换主题">☾</button>
+        <button class="nav-toggle" type="button" aria-label="展开菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-title">失物招领</span>
+      </div>
+
+      <div class="split">
+        <form class="panel" id="lostForm" novalidate>
+          <div class="panel-title">发布信息</div>
+          <div class="form-row">
+            <label>信息类型<span class="req">*</span></label>
+            <select class="select" name="type">
+              <option value="">请选择</option>
+              <option>寻物启事</option>
+              <option>失物招领</option>
+            </select>
+            <div class="field-error" data-err="type"></div>
+          </div>
+          <div class="form-row">
+            <label>标题<span class="req">*</span></label>
+            <input class="input" name="title" maxlength="30" placeholder="如 遗失一张校园卡" />
+            <div class="field-error" data-err="title"></div>
+          </div>
+          <div class="form-row">
+            <label>物品分类<span class="req">*</span></label>
+            <select class="select" name="category">
+              <option value="">请选择</option>
+              <option>证件卡片</option>
+              <option>数码电子</option>
+              <option>生活物品</option>
+              <option>钥匙</option>
+              <option>其他</option>
+            </select>
+            <div class="field-error" data-err="category"></div>
+          </div>
+          <div class="form-row">
+            <label>地点<span class="req">*</span></label>
+            <input class="input" name="location" maxlength="30" placeholder="如 第一食堂二楼" />
+            <div class="field-error" data-err="location"></div>
+          </div>
+          <div class="form-row">
+            <label>发生时间</label>
+            <input class="input" name="happenAt" type="datetime-local" />
+          </div>
+          <div class="form-row">
+            <label>联系方式<span class="req">*</span></label>
+            <input class="input" name="contact" maxlength="30" placeholder="微信 / QQ / 电话" />
+            <div class="field-error" data-err="contact"></div>
+          </div>
+          <div class="form-row">
+            <label>详细描述</label>
+            <textarea class="textarea" name="desc" maxlength="200" placeholder="物品特征、外观、附带物等"></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">发布</button>
+        </form>
+
+        <div>
+          <div class="filter-bar">
+            <input class="input search" id="searchInput" placeholder="搜索标题" />
+            <select class="select" id="statusFilter" style="width:auto">
+              <option value="">全部状态</option>
+              <option value="进行中">进行中</option>
+              <option value="已完成">已完成</option>
+            </select>
+          </div>
+          <div class="chips" id="typeChips"></div>
+          <p class="result-count" id="resultCount"></p>
+          <div class="list-grid" id="lostList"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      校园生活助手 · 25 计算机 1 班第 2 组实训项目 · <span data-year>2026</span>
+    </div>
+  </footer>
+
+  <script src="js/dataManager.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/lost.js"></script>
+</body>
+</html>
