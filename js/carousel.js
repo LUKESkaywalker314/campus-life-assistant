@@ -18,7 +18,13 @@
     items.forEach(function (it) {
       const slide = document.createElement("div");
       slide.className = "carousel-slide";
-      slide.style.background = gradients[it.theme] || gradients.g1;
+      if (it.cover) {
+        slide.style.backgroundImage = "url('" + it.cover + "')";
+        slide.style.backgroundSize = "cover";
+        slide.style.backgroundPosition = "center";
+      } else {
+        slide.style.background = gradients[it.theme] || gradients.g1;
+      }
       slide.innerHTML =
         '<div class="slide-content">' +
         '<span class="slide-tag">' + escapeHtml(it.category) + '</span>' +
